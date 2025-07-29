@@ -1,5 +1,12 @@
+import { Zen_Dots } from "next/font/google";
 import "./globals.css";
+import Header from "./components/Header";
 
+const zenDots = Zen_Dots({
+  subsets: ["latin"],
+  variable: "--font-zen-dots",
+  weight: "400",
+});
 
 export const metadata = {
   title: "Create Next App",
@@ -9,9 +16,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={``}
-      >
+      <body className={`${zenDots.variable} px-2 md:px-16`}>
+        <Header />
         {children}
       </body>
     </html>
